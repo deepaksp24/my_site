@@ -1,46 +1,29 @@
 {% extends "base.html"%} 
 {% load static %}
+
+
 {% block title%} 
     My 
 {%endblock%} 
 
 {% block css_files%}
+<link rel="stylesheet" href="{% static "blog/post.css" %}"/>
 <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
 {% endblock%}
 {%block content %}
-<header id = "main-navigation">
-  <h1>
-    <a href="">Deepak Blog</a>
-  </h1>
-  <nav>
-    <a href="">All posts</a>
-  </nav>
-</header>
 
 <section id = "welcome">
     <header>
-        <img src = "" alt = "Deepak author of this blog"/>
+        <img src = "{% static "blog/images/batman.jpg"%}" alt = "Deepak author of this blog"/>
         <h2>Deepak blog</h2>
     </header>
     <p>Hi ,I am Deepak a tech enuthusistic and designer</p>
 </section>
 
-<section id = "lastest-posts">
+<section id = "latest-posts">
     <h2>Lastest posts</h2> 
     <ul>
-        <li>
-            <article class = "post"></article>
-            <a href = "">
-                <img src = "" alt = "montain"/>
-                <div class = "post__content">
-                    <h3>montain Hiking</h3>
-                    <p> i don't go this  montain Hiking 
-                        bscjkbsckjnsjcjkc sc sdkcksdbcksdbc
-                        sdc c sjsd cj 
-                    </p>
-                </div>
-            </a>
-        </li>
+        {% include "blog/includes/post.html" %}
     </ul>
 </section>
 
